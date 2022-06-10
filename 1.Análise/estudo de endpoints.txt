@@ -1,0 +1,96 @@
+1) Realizar login post '/usuario/login'
+
+req
+{
+    email 
+    senha
+}
+
+resp
+{
+    email
+    nome
+    id
+}
+
+
+
+2) Inserir agendamento   post '/agendamento'
+
+req
+{       
+    paciente.IDUSUARIO
+    paciente.PACIENTE
+    paciente.TELEFONE
+    paciente.NASCIMENTO
+    paciente.GENERO
+    paciente.CPF
+    paciente.OBSERVACAO
+    paciente.CONSULTA
+    paciente.PAGAMENTO
+    paciente.VALORTOTAL
+    paciente.COMPARECEU
+}
+
+resp
+{
+    paciente.IDUSUARIO
+    paciente.PACIENTE
+    paciente.TELEFONE
+    paciente.NASCIMENTO
+    paciente.GENERO
+    paciente.CPF
+    paciente.OBSERVACAO
+    paciente.CONSULTA
+    paciente.PAGAMENTO
+    paciente.VALORTOTAL
+    paciente.COMPARECEU
+    id.agendamento
+}
+
+3) excluir agendamento /delete '/agendamento/:id'
+
+req {
+    id
+}
+
+resp {
+    status(204)
+}
+
+4) consultar por nome /get '/agendamento/:nome
+resp
+{
+    [nome]
+}
+
+
+5) pesquisar agendamento por data /get '/agendamentondata/:data'
+resp
+{
+    [nome]
+}
+
+
+6) pesquisar por data  /GET  '/paciente/busca?nome=xx
+response
+[   
+    {
+        "nome": "",
+        "avaliacao":0.0,
+        "lancamento": "2020-10-00",
+        "disponivel": true,
+        "usuario": 0
+    }
+]
+
+(7) /GET            /paciente/:id
+response
+   
+    {
+        "nome": "",
+        "cpf":"",
+        "dataAgendada": "2020-10-00",
+        "horario": "",
+        "numeroFicha": 0
+    }
