@@ -9,6 +9,7 @@ export default function Index() {
     const [senha, setSenha] = useState('');
     const [erro, setErro] = useState('');
 
+    const navigate = useNavigate();
     
     async function entrarClick() {
         try {
@@ -20,11 +21,11 @@ export default function Index() {
                 setErro(r.data.erro);
             }
             else {
-                Navigate('/admin');
+                navigate('/admin');
             }
         } catch (err) {
             if (err.response.status === 401){
-                setErro(err.response.data.erro)
+                setErro(err.response.data.erro);
             }
         }
         
@@ -46,12 +47,9 @@ export default function Index() {
             </div>
 
 
-            <Link className='botao'
-             onClick={entrarClick}> Login </Link>
+            <Link className='botao'onClick={entrarClick}> Login </Link>
             <div>
-                <h2>
-
-                </h2>
+                {erro}
             </div>
             <Link className='voltar' to="../"> Página Inicial </Link>
             </div>
