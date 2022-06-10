@@ -46,7 +46,8 @@ export default function Index() {
             </div>
 
 
-            <Link className='botao' onClick={entrarClick}> Login </Link>
+            <Link className='botao'
+             onClick={entrarClick}> Login </Link>
             <div>
                 <h2>
 
